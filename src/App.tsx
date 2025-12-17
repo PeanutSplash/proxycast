@@ -13,7 +13,6 @@ import { ProviderPoolPage } from "./components/provider-pool";
 import { RoutingPage } from "./components/routing";
 import { ResiliencePage } from "./components/resilience";
 import { ConfigPage } from "./components/config";
-import { MonitoringPage } from "./components/monitoring";
 
 type Page =
   | "dashboard"
@@ -28,8 +27,7 @@ type Page =
   | "provider-pool"
   | "routing"
   | "resilience"
-  | "config"
-  | "monitoring";
+  | "config";
 
 function App() {
   const [currentPage, setCurrentPage] = useState<Page>("dashboard");
@@ -62,8 +60,6 @@ function App() {
         return <ResiliencePage />;
       case "config":
         return <ConfigPage />;
-      case "monitoring":
-        return <MonitoringPage />;
       default:
         return <Dashboard />;
     }
